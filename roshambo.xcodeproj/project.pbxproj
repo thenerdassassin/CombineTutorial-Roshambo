@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		436228F4242DADB7007E6E3A /* RoshamboOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436228F3242DADB7007E6E3A /* RoshamboOption.swift */; };
+		436228F6242DB27C007E6E3A /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436228F5242DB27C007E6E3A /* UserOptions.swift */; };
 		43BDE03F242AFE4C00A20EB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDE03E242AFE4C00A20EB5 /* AppDelegate.swift */; };
 		43BDE041242AFE4C00A20EB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDE040242AFE4C00A20EB5 /* SceneDelegate.swift */; };
-		43BDE043242AFE4C00A20EB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDE042242AFE4C00A20EB5 /* ContentView.swift */; };
+		43BDE043242AFE4C00A20EB5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDE042242AFE4C00A20EB5 /* MainView.swift */; };
 		43BDE045242AFE5500A20EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDE044242AFE5500A20EB5 /* Assets.xcassets */; };
 		43BDE048242AFE5500A20EB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDE047242AFE5500A20EB5 /* Preview Assets.xcassets */; };
 		43BDE04B242AFE5500A20EB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDE049242AFE5500A20EB5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		436228F3242DADB7007E6E3A /* RoshamboOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshamboOption.swift; sourceTree = "<group>"; };
+		436228F5242DB27C007E6E3A /* UserOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
 		43BDE03B242AFE4B00A20EB5 /* roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BDE03E242AFE4C00A20EB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43BDE040242AFE4C00A20EB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		43BDE042242AFE4C00A20EB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		43BDE042242AFE4C00A20EB5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		43BDE044242AFE5500A20EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43BDE047242AFE5500A20EB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43BDE04A242AFE5500A20EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,10 +61,12 @@
 			isa = PBXGroup;
 			children = (
 				43BDE03E242AFE4C00A20EB5 /* AppDelegate.swift */,
-				43BDE040242AFE4C00A20EB5 /* SceneDelegate.swift */,
-				43BDE042242AFE4C00A20EB5 /* ContentView.swift */,
+				43BDE042242AFE4C00A20EB5 /* MainView.swift */,
+				436228F3242DADB7007E6E3A /* RoshamboOption.swift */,
+				436228F5242DB27C007E6E3A /* UserOptions.swift */,
 				43BDE044242AFE5500A20EB5 /* Assets.xcassets */,
 				43BDE049242AFE5500A20EB5 /* LaunchScreen.storyboard */,
+				43BDE040242AFE4C00A20EB5 /* SceneDelegate.swift */,
 				43BDE04C242AFE5500A20EB5 /* Info.plist */,
 				43BDE046242AFE5500A20EB5 /* Preview Content */,
 			);
@@ -148,7 +154,9 @@
 			files = (
 				43BDE03F242AFE4C00A20EB5 /* AppDelegate.swift in Sources */,
 				43BDE041242AFE4C00A20EB5 /* SceneDelegate.swift in Sources */,
-				43BDE043242AFE4C00A20EB5 /* ContentView.swift in Sources */,
+				43BDE043242AFE4C00A20EB5 /* MainView.swift in Sources */,
+				436228F6242DB27C007E6E3A /* UserOptions.swift in Sources */,
+				436228F4242DADB7007E6E3A /* RoshamboOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
