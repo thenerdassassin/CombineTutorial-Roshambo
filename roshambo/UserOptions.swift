@@ -11,8 +11,7 @@ import Combine
 
 class UserOptions: ObservableObject {
     private let options: [String]
-
-    @Published var selectedOption: String = "Make Your Choice"
+    @Published var selectedOption: String = ""
     
     init(_ options: String...) {
         var providedOptions: [String] = []
