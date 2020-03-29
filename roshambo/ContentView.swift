@@ -12,7 +12,12 @@ import Combine
 struct ContentView: View {
     @ObservedObject var options = UserOptions("Fire", "Grass", "Water")
     var body: some View {
-        UserSelectionView(options: options)
+            VStack {
+            UserSelectionView(options: options)
+            Spacer()
+            ReflectorView(options: options)
+            Spacer()
+        }
     }
 }
 
