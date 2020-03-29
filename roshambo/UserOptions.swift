@@ -11,7 +11,13 @@ import Combine
 
 class UserOptions: ObservableObject {
     private let options: [String]
-    @Published var selectedOption: String = ""
+    
+    @Published var selectedOption: String = "" {
+        didSet {
+            reflectorSelection.send(selectedOption)
+        }
+    }
+    var reflectorSelection = PassthroughSubject<String, Never>()
     
     init(_ options: String...) {
         var providedOptions: [String] = []
