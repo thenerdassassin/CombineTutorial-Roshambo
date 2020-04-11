@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ChooseElementView: View {
-  @Binding var selectedElement: Element?
+  @Binding var selectedElement: Element
   
   var body: some View {
     VStack(spacing: 5) {

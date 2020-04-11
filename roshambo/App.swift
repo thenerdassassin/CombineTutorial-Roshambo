@@ -1,35 +1,48 @@
 import SwiftUI
+import Combine
 
 enum Winner {
   case one, two, neither
 }
 
 class App: ObservableObject {
-  @Published var playerOneElement: Element?
-  @Published var playerTwoElement: Element?
+  @Published var user: Player
+  @Published var playerTwo: CopyCatPlayer! = nil
+  @Published var winner: Winner?
+  private var cancellableSet: Set<AnyCancellable> = []
+  
+  init() {
+    self.user = Player()
+    self.playerTwo = CopyCatPlayer(opponentElementPublisher: user.$element.eraseToAnyPublisher())
+    let _ = Publishers.CombineLatest(user.$element, playerTwo.$element)
+      .map { self.getWinner(elementOne: $0, elementTwo: $1)}
+      .eraseToAnyPublisher()
+      .assign(to: \.winner, on: self)
+      .store(in: &cancellableSet)
+  }
+  
   var hasWinner: Bool { winner != nil }
   
-  var winner: Winner? {
-    guard
-      let playerOneElement = playerOneElement,
-      let playerTwoElement = playerTwoElement else {
-        return nil
-    }
-    
-    let result = battle(elementOne: playerOneElement, elementTwo: playerTwoElement)
+  func getWinner(elementOne: Element, elementTwo: Element) -> Winner? {
+    let result = battle(elementOne: elementTwo, elementTwo: elementTwo)
     switch result {
     case .win: return .one
     case .lose: return .two
     case .tie: return .neither
+    default: return nil
     }
   }
   
   func reset() {
-    playerOneElement = nil
-    playerTwoElement = nil
+    print("Resetting")
+    user.element = .none
+    playerTwo.element = .none
   }
   
-  private func battle(elementOne: Element, elementTwo: Element) -> BattleResult {
+  func battle(elementOne: Element, elementTwo: Element) -> BattleResult? {
+    if elementOne == .none || elementTwo == .none {
+      return nil
+    }
     if elementOne == elementTwo {
       return .tie
     }
@@ -42,7 +55,7 @@ class App: ObservableObject {
     if elementOne == .grass {
       return elementTwo == .water ? .win : .lose
     }
-    return .tie
+    return nil
   }
   
 }

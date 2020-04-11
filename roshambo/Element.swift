@@ -5,13 +5,14 @@ enum BattleResult {
 }
 
 enum Element {
-  case water, fire, grass
+  case water, fire, grass, none
   
   var title: String {
     switch self {
     case .water: return "Water"
     case .fire: return "Fire"
     case .grass: return "Grass"
+    case .none: return ""
     }
   }
   var color: Color {
@@ -19,6 +20,7 @@ enum Element {
     case .water: return .blue
     case .fire: return .red
     case .grass: return .green
+    case .none: return .clear
     }
   }
   static let allItems: [Element] = [.water, .fire, .grass]

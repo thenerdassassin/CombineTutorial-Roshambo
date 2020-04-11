@@ -8,19 +8,17 @@ struct ContentView: View {
       Text("Player One")
         .font(.title)
         .padding()
-      ChooseElementView(selectedElement: $app.playerOneElement)
-        .disabled(app.hasWinner)
-        .opacity(app.playerOneElement != nil ? 0.5 : 1)
-      Text(app.playerOneElement == nil ? "" : "Selected")
+      ChooseElementView(selectedElement: $app.user.element)
+        .disabled(app.winner != nil)
+        .opacity(app.user.element != Element.none ? 0.5 : 1)
+      Text(app.playerTwo.element == Element.none ? "" : "Selected")
         .padding()
-      Spacer()
       control
-      Spacer()
-      Text(app.playerTwoElement == nil ? "" : "Selected")
+      Text(app.playerTwo.element == Element.none ? "" : "Selected")
         .padding()
-      ChooseElementView(selectedElement: $app.playerTwoElement)
-        .disabled(app.hasWinner)
-        .opacity(app.playerTwoElement != nil ? 0.5 : 1)
+      ChooseElementView(selectedElement: $app.playerTwo.element)
+        .disabled(true)
+        .opacity(app.playerTwo.element != Element.none ? 0.5 : 1)
       Text("Player Two")
         .font(.title)
         .padding()
@@ -49,7 +47,7 @@ struct ContentView: View {
     switch winner {
     case .one: return "Player one wins"
     case .two: return "Player two wins"
-    case .neither: return "You suck"
+    case .neither: return "Tie!"
     case .none: return "Make a choice"
     }
   }
