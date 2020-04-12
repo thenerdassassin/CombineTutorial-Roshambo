@@ -5,23 +5,25 @@ struct ContentView: View {
   
   var body: some View {
     VStack {
+      Spacer()
       Text("Player One")
         .font(.title)
         .padding()
       ChooseElementView(selectedElement: $app.user.element)
         .disabled(app.winner != nil)
         .opacity(app.user.element != Element.none ? 0.5 : 1)
-      Text(app.playerTwo.element == Element.none ? "" : "Selected")
+      Text(app.user.element == Element.none ? "" : "Selected \(app.user.element.title)")
         .padding()
       control
-      Text(app.playerTwo.element == Element.none ? "" : "Selected")
+      Text(app.opponent.element == Element.none ? "" : "Selected \(app.opponent.element.title)")
         .padding()
-      ChooseElementView(selectedElement: $app.playerTwo.element)
+      ChooseElementView(selectedElement: $app.opponent.element)
         .disabled(true)
-        .opacity(app.playerTwo.element != Element.none ? 0.5 : 1)
-      Text("Player Two")
+        .opacity(app.opponent.element != Element.none ? 0.5 : 1)
+      Text("Opponent")
         .font(.title)
         .padding()
+      Spacer()
     }
   }
   
@@ -29,10 +31,8 @@ struct ContentView: View {
     if let _ = app.winner {
       return HStack {
         Text(message)
-          .padding()
         Button(action: app.reset) {
           Text("Reset")
-            .padding()
         }
       }
       .eraseToAnyView()
@@ -46,7 +46,7 @@ struct ContentView: View {
     let winner = app.winner
     switch winner {
     case .one: return "Player one wins"
-    case .two: return "Player two wins"
+    case .two: return "Opponent wins"
     case .neither: return "Tie!"
     case .none: return "Make a choice"
     }

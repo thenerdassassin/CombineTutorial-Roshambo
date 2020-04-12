@@ -1,19 +1,14 @@
-//
-//  CopyCatPlayer.swift
-//  roshambo
-//
-//  Created by Brittany Schmidt on 4/11/20.
-//  Copyright © 2020 Joshua Schmidt. All rights reserved.
-//
 import SwiftUI
 import Combine
 
 class CopyCatPlayer: Player {
   private var cancellableSet: Set<AnyCancellable> = []
   
-  init(opponentElementPublisher: AnyPublisher<Element, Never>) {
-    super.init()
-    let _ = opponentElementPublisher
+  init(opponentElement: AnyPublisher<Element, Never>, _ resetter: AnyPublisher<Bool, Never>) {
+    super.init(resetter)
+    let _ = opponentElement
+      .debounce(for: .milliseconds(200), scheduler: RunLoop.main)
+      .receive(on: RunLoop.main)
       .assign(to: \.element, on: self)
       .store(in: &cancellableSet)
   }

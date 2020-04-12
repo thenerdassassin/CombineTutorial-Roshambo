@@ -18,6 +18,7 @@
 		43BDE045242AFE5500A20EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDE044242AFE5500A20EB5 /* Assets.xcassets */; };
 		43BDE048242AFE5500A20EB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDE047242AFE5500A20EB5 /* Preview Assets.xcassets */; };
 		43BDE04B242AFE5500A20EB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDE049242AFE5500A20EB5 /* LaunchScreen.storyboard */; };
+		43CF4D9D2443581B00B21292 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF4D9C2443581B00B21292 /* Game.swift */; };
 		43FA9577244239D100AF5D7A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA9576244239D100AF5D7A /* Player.swift */; };
 		43FA95792442441300AF5D7A /* CopyCatPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA95782442441300AF5D7A /* CopyCatPlayer.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		43BDE047242AFE5500A20EB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43BDE04A242AFE5500A20EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43BDE04C242AFE5500A20EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43CF4D9C2443581B00B21292 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		43FA9576244239D100AF5D7A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		43FA95782442441300AF5D7A /* CopyCatPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyCatPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				4376E6EA2432D27D00A2EFA9 /* App.swift */,
+				43CF4D9C2443581B00B21292 /* Game.swift */,
 				43FA95782442441300AF5D7A /* CopyCatPlayer.swift */,
 				43FA9576244239D100AF5D7A /* Player.swift */,
 				43928667242EF72100B9A610 /* ChooseElementView.swift */,
@@ -173,6 +176,7 @@
 				4376E6E92432D11B00A2EFA9 /* Element.swift in Sources */,
 				43928668242EF72100B9A610 /* ChooseElementView.swift in Sources */,
 				437C80722432E1BC00885215 /* View+Additions.swift in Sources */,
+				43CF4D9D2443581B00B21292 /* Game.swift in Sources */,
 				43BDE043242AFE4C00A20EB5 /* ContentView.swift in Sources */,
 				436228F4242DADB7007E6E3A /* RoshamboButton.swift in Sources */,
 				43FA95792442441300AF5D7A /* CopyCatPlayer.swift in Sources */,

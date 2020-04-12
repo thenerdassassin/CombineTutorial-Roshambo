@@ -8,13 +8,13 @@ struct RoshamboButton: View {
     Button(action: action) {
       Text(element.title)
         .font(.title)
-        .padding(.horizontal, 40)
-        .padding(.vertical, 20)
+        .padding(.horizontal, 30)
+        .padding(.vertical, 15)
         .background(element.color)
         .foregroundColor(Color.white)
         .cornerRadius(40)
         .overlay(
-          RoundedRectangle(cornerRadius: 40)
+          RoundedRectangle(cornerRadius: 30)
             .stroke(Color.black, lineWidth: 3)
       )
     }
