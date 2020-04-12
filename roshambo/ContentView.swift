@@ -2,11 +2,13 @@ import SwiftUI
 
 struct ContentView: View {
   @EnvironmentObject var app: App
+  let playerOne = "Player One"
+  let playerTwo = "Opponent"
   
   var body: some View {
     VStack {
       Spacer()
-      Text("Player One")
+      Text(playerOne)
         .font(.title)
         .padding()
       ChooseElementView(selectedElement: $app.user.element)
@@ -20,7 +22,7 @@ struct ContentView: View {
       ChooseElementView(selectedElement: $app.opponent.element)
         .disabled(true)
         .opacity(app.opponent.element != Element.none ? 0.5 : 1)
-      Text("Opponent")
+      Text(playerTwo)
         .font(.title)
         .padding()
       Spacer()
@@ -45,8 +47,8 @@ struct ContentView: View {
   var message: String {
     let winner = app.winner
     switch winner {
-    case .one: return "Player one wins"
-    case .two: return "Opponent wins"
+    case .one: return "\(playerOne) wins"
+    case .two: return "\(playerTwo) wins"
     case .neither: return "Tie!"
     case .none: return "Make a choice"
     }
